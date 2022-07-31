@@ -10,7 +10,7 @@
         </div>
         <div class="flex items-center">
             <a class="cart">
-                <span class="counter">0</span>
+                <span class="counter">{{cartItemCount}}</span>
                 <span class="material-symbols-outlined text-green-500">shopping_bag</span>
             </a>
             <a class="login-icon">
@@ -27,12 +27,16 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
  name: 'Header',
  data(){
     return{
         sideNav: null,
     }
+ },
+ computed:{
+        ...mapState(['cartItemCount'])
  },
  methods:{
     toggleSideNav(){

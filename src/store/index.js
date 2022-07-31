@@ -6,7 +6,9 @@ export default createStore({
     jewelries: [],
     womenclothing: [],
     electronics: [],
-    menclothing:[]
+    menclothing:[],
+    cartItemCount:0,
+    cartItem: [],
   },
 
   getters: {

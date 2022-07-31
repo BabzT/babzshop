@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 *{
-    @apply box-border scroll-smooth relative
+    @apply box-border scroll-smooth
 }
 
 /* Header */
@@ -28,7 +28,7 @@
     @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
 }
 .sidenav{
-    @apply absolute w-3/4 h-full bg-gray-500 left-0 z-40 top-12
+    @apply fixed w-3/4 h-full bg-gray-500 left-0 z-40 top-12
 }
 .side-nav-enter-active,
 .side-nav-leave-active{
@@ -55,7 +55,7 @@
     @apply w-full text-center my-4
 }
 .right{
-    @apply absolute -right-2 font-bold text-green-600 top-20
+    @apply absolute -right-1 font-bold text-green-600 top-20
 }
 .tabtitle{
     @apply font-bold text-2xl
