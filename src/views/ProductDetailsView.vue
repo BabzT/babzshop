@@ -4,7 +4,7 @@
         <div class="detailimg"> 
             <img :src="product.image" alt="">
         </div>
-        <div class="productinfo mb-11 w-11/12 text-center">
+        <div class="productinfo mb-14 w-11/12 text-center">
             <p><span class="text-base">{{product.title}}</span></p>
             <p>Category: <span class="text-sm capitalize">{{product.category}}</span></p>
             <p>Price: <span class="text-xs text-rose-600">${{product.price}}</span></p>

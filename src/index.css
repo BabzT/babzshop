@@ -99,7 +99,7 @@
     @apply font-bold
 }
 .adddiv{
-    @apply h-11 fixed w-full bottom-0 flex items-center justify-between px-1
+    @apply h-11 fixed w-full bottom-0 flex items-center justify-between px-1 mb-2
 }
 .wishbtn{
     @apply h-full w-1/6 bg-red-600 rounded-md
