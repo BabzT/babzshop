@@ -55,7 +55,7 @@
     @apply w-full text-center my-4
 }
 .right{
-    @apply absolute -right-1 font-bold text-green-600 top-20
+    @apply absolute right-0 font-bold text-green-600 top-20
 }
 .tabtitle{
     @apply font-bold text-2xl
@@ -78,15 +78,32 @@
 .product{
     @apply flex flex-col items-center justify-evenly w-min h-44 mr-4 px-1 flex flex-shrink-0 snap-start
 }
-.product img{
+.productimg{
     @apply h-1/2 w-full
 }
 .details{
-    @apply bg-stone-50 w-full h-2/5 mx-1 rounded-md flex flex-col items-center justify-center
+    @apply bg-stone-50 w-full h-2/5 mt-1 rounded-md flex flex-col items-center justify-center
 }
 .details p{
-    @apply text-sm font-bold
+    @apply text-xs font-bold
 }
 .details h1{
     @apply text-sm font-bold text-amber-500
+}
+
+/* ProductDetails */
+.detailimg{
+    @apply w-3/5 max-h-fit
+}
+.productinfo p{
+    @apply font-bold
+}
+.adddiv{
+    @apply h-11 fixed w-full bottom-0 flex items-center justify-between px-1
+}
+.wishbtn{
+    @apply h-full w-1/6 bg-red-600 rounded-md
+}
+.addbtn{
+    @apply bg-green-600 text-white font-bold h-full w-4/5 rounded-md
 }

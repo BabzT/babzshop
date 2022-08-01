@@ -3,12 +3,14 @@
     <span class="material-symbols-outlined right">chevron_right</span>
     <div class="toppicks">
       <div v-for="product in allWomenClothing" :key="product.id" class="product">
-        <img :src="product.image" alt="">
+        <router-link :to="'/productdetails/' + product.id" class="h-full">
+        <img :src="product.image" alt="" class="productimg">
         <div class="details">
           <p>{{product.title.slice(0,11)}}...</p>
           <h1>Review: {{product.rating.count}}</h1>
           <p>${{product.price}}</p>
         </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -22,7 +24,7 @@ export default {
     ...mapGetters(["allWomenClothing"])
   },
   methods:{
-    ...mapActions(['fetchWomenClothing'])
+    ...mapActions(['fetchWomenClothing']),
   },
   created(){
     this.fetchWomenClothing();

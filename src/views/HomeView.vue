@@ -19,7 +19,7 @@
 import Header from '@/components/Header.vue'
 import TopSellers from '@/components/TopSellers.vue'
 import TrendingProducts from '@/components/TrendingProducts.vue'
-
+import {mapGetters, mapActions} from 'vuex'
 export default {
   name: 'HomeView',
   components: {
@@ -27,5 +27,14 @@ export default {
     TopSellers,
     TrendingProducts
   },
+  computed:{
+      ...mapGetters(["allProducts"])
+    },
+    methods:{
+      ...mapActions(['fetchProducts']),
+    },
+    created(){
+      this.fetchProducts();
+    }
 }
 </script>

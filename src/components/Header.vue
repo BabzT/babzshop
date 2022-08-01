@@ -6,10 +6,10 @@
                 <span @click="toggleSideNav" v-if="!sideNav" class="material-symbols-outlined text-3xl mr-1">menu</span>
                 <span @click="toggleSideNav" v-if="sideNav" class="material-symbols-outlined text-3xl mr-1">close</span>
             </div>
-            <h1 class="logo">Shop<span class="text-black">per</span></h1>
+            <h1 class="logo" @click="goTo('home')">Shop<span class="text-black">per</span></h1>
         </div>
         <div class="flex items-center">
-            <a class="cart">
+            <a class="cart" @click="goTo('cart')">
                 <span class="counter">{{cartItemCount}}</span>
                 <span class="material-symbols-outlined text-green-500">shopping_bag</span>
             </a>
@@ -41,6 +41,9 @@ export default {
  methods:{
     toggleSideNav(){
         this.sideNav = !this.sideNav
+    },
+    goTo(page){
+        page === "home" ? this.$router.push({name:'home'}) : this.$router.push({name:'cart'})
     }
  }
 }

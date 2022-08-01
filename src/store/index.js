@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export default createStore({
   state: {
+    products:[],
     jewelries: [],
     womenclothing: [],
     electronics: [],
@@ -12,6 +13,9 @@ export default createStore({
   },
 
   getters: {
+    allProducts: state => {
+      return state.products
+    },
     allJewelries: state => {
       return state.jewelries
     },
@@ -27,6 +31,9 @@ export default createStore({
   },
 
   mutations: {
+    setProducts(state, products){
+      return state.products = products
+    },
     setJewelries(state, jewelries) {
       return state.jewelries = jewelries
     },
@@ -39,29 +46,43 @@ export default createStore({
     setMenClothing(state,menclothing){
       return state.menclothing = menclothing
     },
+    setProductDetail(state, productdetail){
+      return state.productdetail = productdetail
+    }
   },
 
   actions: {
     async fetchJewelries(context){
       const response = await axios.get('https://fakestoreapi.com/products/category/jewelery');
-      console.log(response.data)
+      // console.log(response.data)
       context.commit('setJewelries',response.data)
-      localStorage.setItem("jewelries",JSON.stringify(response.data))
     },
     async fetchWomenClothing(context){
       const response = await axios.get("https://fakestoreapi.com/products/category/women's clothing");
-      console.log(response.data)
+      // console.log(response.data)
       context.commit('setWomenClothing',response.data)
     },
     async fetchElectronics(context){
       const response = await axios.get('https://fakestoreapi.com/products/category/electronics');
-      console.log(response.data)
+      // console.log(response.data)
       context.commit('setElectronics', response.data)
     },
     async fetchMenClothing(context){
       const response = await axios.get("https://fakestoreapi.com/products/category/men's clothing");
-      console.log(response.data)
+      // console.log(response.data)
       context.commit('setMenClothing',response.data)
+    },
+    async fetchProducts(context){
+      const response = await axios.get("https://fakestoreapi.com/products");
+      console.log(response.data)
+      context.commit('setProducts',response.data)
+      localStorage.setItem("products",JSON.stringify(response.data))
+    },
+    async getProductDetail(context,id){
+      const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+      console.log(response.data)
+      context.commit('setProductDetail',response.data)
+      localStorage.setItem("setProductDetail",JSON.stringify(response.data))
     },
   },
 
