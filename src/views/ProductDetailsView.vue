@@ -14,13 +14,14 @@
         
     </div>
     <div class="adddiv">
-        <button class="wishbtn"><span class="material-symbols-outlined text-white text-3xl">delete</span></button>
-        <button class="addbtn">Add Item</button>
+        <button @click="removeItem" class="wishbtn"><span class="material-symbols-outlined text-white text-3xl">delete</span></button>
+        <button @click="addToCart" class="addbtn">Add Item</button>
     </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
+import {mapState, mapActions} from "vuex"
 import axios from 'axios';
 export default {
     name:'ProductDetails',
@@ -30,20 +31,24 @@ export default {
     data(){
         return{
             id:this.$route.params.id,
-            product:{}
+            product:{},
         }
     },
     computed:{
-       
     },
     methods:{
-       
+       addToCart(){
+        this.$store.dispatch('addToCart',this.product)
+       },
+       removeItem(){
+        this.$store.dispatch('removeItem',this.product)
+       },
     },
     async created(){
         const response = await axios.get(`https://fakestoreapi.com/products/` + this.id);
         this.product = response.data;
         console.log(response.data)
-    }
+    },
 }
 </script>
 

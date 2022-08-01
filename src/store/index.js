@@ -9,7 +9,7 @@ export default createStore({
     electronics: [],
     menclothing:[],
     cartItemCount:0,
-    cartItem: [],
+    cartItems: [],
   },
 
   getters: {
@@ -46,9 +46,38 @@ export default createStore({
     setMenClothing(state,menclothing){
       return state.menclothing = menclothing
     },
-    setProductDetail(state, productdetail){
-      return state.productdetail = productdetail
-    }
+    addToCart(state,payload){
+      let item = payload;
+      item = {...item, quantity: 1}
+      if(state.cartItems.length > 0){
+        let bool = state.cartItems.some(i => i.id == item.id)
+        if(bool){
+          let itemIndex = state.cartItems.findIndex(el => el.id === item.id)
+          state.cartItems[itemIndex]["quantity"] += 1;
+        } else{
+          state.cartItems.push(item)
+        }
+      } else{
+        state.cartItems.push(item)
+      }
+      state.cartItemCount++
+    },
+    removeItem(state,payload){
+      if(state.cartItems.length > 0){
+        let bool = state.cartItems.some(i => i.id === payload.id)
+        if(bool){
+          let index = state.cartItems.findIndex(el => el.id === payload.id)
+          if(state.cartItems[index]["quantity"] !== 0){
+            state.cartItems[index]["quantity"] -= 1
+            state.cartItemCount--
+          }
+          if(state.cartItems[index]["quantity"] == 0){
+            state.cartItems.splice(index,1)
+          }
+        }
+      }
+    },
+      
   },
 
   actions: {
@@ -78,11 +107,11 @@ export default createStore({
       context.commit('setProducts',response.data)
       localStorage.setItem("products",JSON.stringify(response.data))
     },
-    async getProductDetail(context,id){
-      const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-      console.log(response.data)
-      context.commit('setProductDetail',response.data)
-      localStorage.setItem("setProductDetail",JSON.stringify(response.data))
+    addToCart:(context, payload) => {
+      context.commit('addToCart', payload)
+    },
+    removeItem:(context, payload) => {
+      context.commit('removeItem', payload)
     },
   },
 
