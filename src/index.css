@@ -107,3 +107,7 @@
 .addbtn{
     @apply bg-green-600 text-white font-bold h-full w-4/5 rounded-md
 }
+/* Empty Cart */
+.emptycartcont{
+    @apply pt-28 text-center px-1
+}
