@@ -36,7 +36,7 @@ export default {
     }
  },
  computed:{
-        ...mapState(['cartItemCount'])
+    ...mapState(['cartItemCount'])
  },
  methods:{
     toggleSideNav(){

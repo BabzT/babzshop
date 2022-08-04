@@ -98,10 +98,10 @@
     @apply font-bold
 }
 .adddiv{
-    @apply h-11 fixed w-full bottom-0 flex items-center justify-between px-1 mb-3
+    @apply h-11 fixed w-full bottom-0 flex items-center justify-center px-1 mb-3
 }
 .addbtn{
-    @apply bg-green-600 text-white font-bold h-full w-full rounded-md
+    @apply bg-green-600 text-white font-bold h-full w-11/12 rounded-md
 }
 /* Empty Cart */
 .emptycartcont{

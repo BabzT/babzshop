@@ -1,6 +1,11 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 
+function updateLocalStorage(cartItems,cartItemCount){
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  localStorage.setItem('cartItemCount', JSON.stringify(cartItemCount))
+}
+
 export default createStore({
   state: {
     products:[],
@@ -61,6 +66,8 @@ export default createStore({
         state.cartItems.push(item)
       }
       state.cartItemCount++
+
+      updateLocalStorage(state.cartItems, state.cartItemCount)
     },
     removeItem(state,payload){
       if(state.cartItems.length > 0){
@@ -76,8 +83,30 @@ export default createStore({
           }
         }
       }
+
+      updateLocalStorage(state.cartItems,state.cartItemCount)
     },
-      
+    deleteItem(state, id){
+      let index = state.cartItems.findIndex(el => el.id === id)
+      state.cartItems.splice(index,1)
+
+      updateLocalStorage(state.cartItems,state.cartItemCount)
+    },
+    clearCart(state){
+      state.cartItems = [];
+      state.cartItemCount = 0;
+
+      updateLocalStorage(state.cartItems,state.cartItemCount)
+    },
+    updateCartFromStorage(state){
+      const cartItems = localStorage.getItem('cartItems');
+      const cartItemCount = localStorage.getItem('cartItemCount');
+
+      state.cartItemCount = JSON.parse(cartItemCount)
+      if(cartItems){
+        state.cartItems = JSON.parse(cartItems)
+      }
+    }
   },
 
   actions: {
@@ -113,6 +142,15 @@ export default createStore({
     removeItem:(context, payload) => {
       context.commit('removeItem', payload)
     },
+    deleteItem:(context,id) => {
+      context.commit('deleteItem', id)
+    },
+    clearCart:(context) => {
+      context.commit('clearCart')
+    },
+    updateCartFromStorage:(context) => {
+      context.commit('updateCartFromStorage')
+    }
   },
 
 })
