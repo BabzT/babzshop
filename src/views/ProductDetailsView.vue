@@ -4,7 +4,7 @@
         <div class="detailimg"> 
             <img :src="product.image" alt="">
         </div>
-        <div class="productinfo mb-14 w-11/12 text-center">
+        <div class="productinfo mb-16 w-11/12 text-center">
             <p><span class="text-base">{{product.title}}</span></p>
             <p>Category: <span class="text-sm capitalize">{{product.category}}</span></p>
             <p>Price: <span class="text-xs text-rose-600">${{product.price}}</span></p>
@@ -14,14 +14,12 @@
         
     </div>
     <div class="adddiv">
-        <button @click="removeItem" class="wishbtn"><span class="material-symbols-outlined text-white text-3xl">delete</span></button>
         <button @click="addToCart" class="addbtn">Add Item</button>
     </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
-import {mapState, mapActions} from "vuex"
 import axios from 'axios';
 export default {
     name:'ProductDetails',
@@ -33,8 +31,6 @@ export default {
             id:this.$route.params.id,
             product:{},
         }
-    },
-    computed:{
     },
     methods:{
        addToCart(){
