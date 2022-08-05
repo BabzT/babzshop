@@ -13,6 +13,7 @@
 }
 .mobile{
     @apply flex items-center justify-between p-2
+    md:px-3
 }
 .logo{
     @apply italic text-green-500 text-xl font-medium
@@ -46,12 +47,21 @@
 .side-nav-enter-to{
     @apply translate-x-0
 }
+.Desksidenav{
+    @apply md:fixed md:pt-16 md:border md:px-3 hidden md:block md:w-1/6 md:h-full
+}
+.Desksidenav p{
+    @apply text-sm py-1
+}
+.Desksidenav h1{
+    @apply text-sm font-bold text-green-500 pt-1
+}
 /* End of header */
 .sectionOne{
-    @apply flex items-center justify-between w-full bg-purple-300 px-5 pb-5 pt-16
+    @apply flex items-center justify-center w-full bg-purple-300 px-5 pb-5 pt-16
 }
 .title{
-    @apply font-bold text-2xl mb-2
+    @apply font-bold md:text-3xl text-2xl mb-2
 }
 .btn{
     @apply bg-green-600 py-1 px-2 text-white font-bold rounded my-2
@@ -61,6 +71,7 @@
 }
 .right{
     @apply absolute right-0 font-bold text-green-600 top-20
+    md:hidden
 }
 .tabtitle{
     @apply font-bold text-2xl
@@ -76,18 +87,18 @@
 }
 .toppicks{
     @apply flex overflow-auto snap-x m-3 h-44
-}
-.toppicks::-webkit-scrollbar{
-    @apply w-0 h-0
+    md:items-center md:justify-between md:h-52
 }
 .product{
-    @apply flex flex-col items-center justify-evenly w-min h-44 mr-4 px-1 flex flex-shrink-0 snap-start
+    @apply flex flex-col items-center justify-evenly w-min h-44 mr-4 px-1 flex-shrink-0 snap-start
+    md:border md:w-1/6 md:mr-3 md:px-0 md:rounded-md
 }
 .productimg{
-    @apply h-1/2 w-full
+    @apply h-1/2 w-full md:mt-1
 }
 .details{
     @apply bg-stone-50 w-full h-2/5 mt-1 rounded-md flex flex-col items-center justify-center
+    md:p-2 md:mt-2
 }
 .details p{
     @apply text-xs font-bold
@@ -109,9 +120,7 @@
 .addbtn{
     @apply bg-green-600 text-white font-bold h-full w-11/12 rounded-md
 }
-.btndisable{
-    @apply bg-red-500
-}
+
 /* Empty Cart */
 .emptycartcont{
     @apply pt-28 text-center

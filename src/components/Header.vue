@@ -2,7 +2,7 @@
 <header class="header">
     <div class="mobile">
         <div class="flex items-center">
-            <div class="flex items-center">
+            <div class="flex items-center md:hidden">
                 <span @click="toggleSideNav" v-if="!sideNav" class="material-symbols-outlined text-3xl mr-1">menu</span>
                 <span @click="toggleSideNav" v-if="sideNav" class="material-symbols-outlined text-3xl mr-1">close</span>
             </div>

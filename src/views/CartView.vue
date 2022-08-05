@@ -20,7 +20,7 @@
           <button @click="addItem(items)">+</button>
         </div>
       </div>
-      <p class="font-bold text-lg my-2">Your Total: <span>${{totalPrice}}</span></p>
+      <p class="font-bold text-lg my-2">Your Total: <span>${{totalPrice.toFixed(2)}}</span></p>
       <button @click="checkOut" class="bg-green-600 text-white mr-3 font-bold p-2 rounded-md">CHECKOUT</button>
       <button @click="clearCart" class="bg-purple-500 text-white font-bold p-2 rounded-md">CLEAR CART</button>
     </div>
