@@ -123,5 +123,5 @@
     @apply h-fit border-2 rounded-lg
 }
 .additems button{
-    @apply w-4 mx-1 text-base font-bold
+    @apply w-4 mx-2 text-lg font-bold
 }
