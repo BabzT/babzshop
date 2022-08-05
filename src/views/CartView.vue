@@ -5,12 +5,14 @@
       <h1 class="text-2xl font-bold mb-2">Your Cart</h1>
 
       <div  v-for="items in cartItems" :key="items.id" class="flex items-center my-2 justify-between">
-        <img class="h-14 w-14" :src="items.image" alt="">
+        <img class="h-16 w-14" :src="items.image" alt="">
 
         <div class="text-xs w-7/12 font-bold text-left">
           <p>{{items.title}}</p>
-          <p>${{items.price}}</p>
+          <div class="flex items-center justify-between pr-4">
+            <p class="text-amber-500 text-sm">${{items.price}}</p>
           <button @click="deleteItem(items)"><span class="material-symbols-outlined text-lg text-red-600">delete</span></button>
+          </div>
         </div>
         <div class="additems">
           <button @click="removeItem(items)">-</button>
