@@ -83,12 +83,9 @@ export default createStore({
     removeItem(state,payload){
       if(state.cartItems.length > 0){
           let index = state.cartItems.findIndex(el => el.id === payload.id)
-          if(state.cartItems[index]["quantity"] !== 0){
+          if(state.cartItems[index]["quantity"] > 1){
             state.cartItems[index]["quantity"] -= 1
             state.cartItemCount--
-          }
-          if(state.cartItems[index]["quantity"] == 0){
-            state.cartItems.splice(index,1)
           }
       }
 
