@@ -55,19 +55,20 @@ export default {
     methods:{
       ...mapActions(['clearCart']),
       addItem(items){
-        this.$store.dispatch('addToCart',items)
+        this.$store.dispatch('addItem',items)
       },
       removeItem(items){
         this.$store.dispatch('removeItem',items)
       },
       deleteItem(items){
         this.$store.dispatch('deleteItem', items)
-        console.log('delete')
+
       },
       checkOut(){
         swal("Good Job!", "Your order is placed successfully!", "success").then(
           value => {
             window.location.href = "/cart";
+            this.clearCart()
           }
         )
       },

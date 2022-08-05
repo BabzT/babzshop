@@ -55,24 +55,33 @@ export default createStore({
       let item = payload;
       item = {...item, quantity: 1}
       if(state.cartItems.length > 0){
-        let bool = state.cartItems.some(i => i.id == item.id)
-        if(bool){
-          let itemIndex = state.cartItems.findIndex(el => el.id === item.id)
-          state.cartItems[itemIndex]["quantity"] += 1;
-        } else{
+        let myItem = state.cartItems.some(i => i.id == item.id)
+        if(myItem){
+          alert('You have the product in your shopping bag')
+        }else{
           state.cartItems.push(item)
-        }
+          state.cartItemCount++
+        }   
       } else{
         state.cartItems.push(item)
+        state.cartItemCount++
       }
-      state.cartItemCount++
+      
+      updateLocalStorage(state.cartItems, state.cartItemCount)
+    },
+    addItem(state,payload){
+      let item = payload;
+      item = {...item, quantity:1}
+      let itemIndex = state.cartItems.findIndex(el => el.id === item.id)
+      if(state.cartItems[itemIndex]['quantity'] < 10){
+        state.cartItems[itemIndex]['quantity'] += 1;
+        state.cartItemCount++
+      }
 
       updateLocalStorage(state.cartItems, state.cartItemCount)
     },
     removeItem(state,payload){
       if(state.cartItems.length > 0){
-        let bool = state.cartItems.some(i => i.id === payload.id)
-        if(bool){
           let index = state.cartItems.findIndex(el => el.id === payload.id)
           if(state.cartItems[index]["quantity"] !== 0){
             state.cartItems[index]["quantity"] -= 1
@@ -81,14 +90,15 @@ export default createStore({
           if(state.cartItems[index]["quantity"] == 0){
             state.cartItems.splice(index,1)
           }
-        }
       }
 
       updateLocalStorage(state.cartItems,state.cartItemCount)
     },
-    deleteItem(state, id){
-      let index = state.cartItems.findIndex(el => el.id === id)
-      state.cartItems.splice(index,1)
+    deleteItem(state, payload){
+      let index = state.cartItems.findIndex(el => el.id === payload.id);
+
+      state.cartItemCount -= state.cartItems[index]['quantity'];
+      state.cartItems.splice(index,1);
 
       updateLocalStorage(state.cartItems,state.cartItemCount)
     },
@@ -112,32 +122,29 @@ export default createStore({
   actions: {
     async fetchJewelries(context){
       const response = await axios.get('https://fakestoreapi.com/products/category/jewelery');
-      // console.log(response.data)
       context.commit('setJewelries',response.data)
     },
     async fetchWomenClothing(context){
       const response = await axios.get("https://fakestoreapi.com/products/category/women's clothing");
-      // console.log(response.data)
       context.commit('setWomenClothing',response.data)
     },
     async fetchElectronics(context){
       const response = await axios.get('https://fakestoreapi.com/products/category/electronics');
-      // console.log(response.data)
       context.commit('setElectronics', response.data)
     },
     async fetchMenClothing(context){
       const response = await axios.get("https://fakestoreapi.com/products/category/men's clothing");
-      // console.log(response.data)
       context.commit('setMenClothing',response.data)
     },
     async fetchProducts(context){
       const response = await axios.get("https://fakestoreapi.com/products");
-      console.log(response.data)
       context.commit('setProducts',response.data)
-      localStorage.setItem("products",JSON.stringify(response.data))
     },
     addToCart:(context, payload) => {
       context.commit('addToCart', payload)
+    },
+    addItem:(context, payload) => {
+      context.commit('addItem', payload)
     },
     removeItem:(context, payload) => {
       context.commit('removeItem', payload)

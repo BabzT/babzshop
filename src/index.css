@@ -27,7 +27,13 @@
     @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
 }
 .sidenav{
-    @apply fixed w-3/4 h-full bg-gray-500 left-0 z-40 top-12
+    @apply fixed w-3/4 h-full bg-indigo-50 p-3 left-0 z-40 top-12
+}
+.sidenav p{
+    @apply text-sm py-1
+}
+.sidenav h1{
+    @apply text-sm font-bold text-green-500 pt-1
 }
 .side-nav-enter-active,
 .side-nav-leave-active{
@@ -102,6 +108,9 @@
 }
 .addbtn{
     @apply bg-green-600 text-white font-bold h-full w-11/12 rounded-md
+}
+.btndisable{
+    @apply bg-red-500
 }
 /* Empty Cart */
 .emptycartcont{

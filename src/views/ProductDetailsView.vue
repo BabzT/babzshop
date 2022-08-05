@@ -9,7 +9,6 @@
             <p>Category: <span class="text-sm capitalize">{{product.category}}</span></p>
             <p>Price: <span class="text-xs text-rose-600">${{product.price}}</span></p>
             <p>Description: <span class="text-xs capitalize">{{product.description}}</span></p>
-            <!-- <p>Reviews:{{product.rating.count}}</p> -->
         </div>
         
     </div>
@@ -21,6 +20,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import axios from 'axios';
+
 export default {
     name:'ProductDetails',
     components:{
@@ -43,7 +43,6 @@ export default {
     async created(){
         const response = await axios.get(`https://fakestoreapi.com/products/` + this.id);
         this.product = response.data;
-        console.log(response.data)
     },
 }
 </script>
