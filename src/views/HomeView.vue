@@ -15,8 +15,9 @@
 
         <TopSellers/>
         <TrendingProducts/>
+        <Footer/>
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 
@@ -25,6 +26,7 @@ import Header from '@/components/Header.vue'
 import SideNav from '@/components/SideNav.vue'
 import TopSellers from '@/components/TopSellers.vue'
 import TrendingProducts from '@/components/TrendingProducts.vue'
+import Footer from '@/components/Footer.vue'
 import {mapGetters, mapActions} from 'vuex'
 
 export default {
@@ -33,7 +35,8 @@ export default {
     Header,
     SideNav,
     TopSellers,
-    TrendingProducts
+    TrendingProducts,
+    Footer
   },
   computed:{
       ...mapGetters(["allProducts"])

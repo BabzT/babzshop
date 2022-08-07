@@ -1,11 +1,11 @@
 <template>
   <Header/>
-  <div class="pt-16 px-2">
+  <div class="pt-16 px-2 md:w-2/4 md:mx-auto">
     <div v-if="totalPrice !== 0" class="cartitems">
       <h1 class="text-2xl font-bold mb-2">Your Cart</h1>
 
       <div  v-for="items in cartItems" :key="items.id" class="flex items-center my-2 justify-between">
-        <img class="h-16 w-14" :src="items.image" alt="">
+        <img class="h-16 w-14 md:h-20 md:w-20" :src="items.image" alt="">
 
         <div class="text-xs w-7/12 font-bold text-left">
           <p>{{items.title}}</p>

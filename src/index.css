@@ -12,17 +12,16 @@
     @apply w-full bg-zinc-50 shadow fixed z-50
 }
 .mobile{
-    @apply flex items-center justify-between p-2
-    md:px-3
+    @apply flex items-center justify-between py-2 px-5
 }
 .logo{
     @apply italic text-green-500 text-xl font-medium
 }
 .cart{
-    @apply relative flex items-center border-2 border-green-500 p-1 rounded-full mr-2
+    @apply relative flex items-center border-2 border-green-500 h-fit p-1 rounded-full mr-3
 }
 .counter{
-    @apply absolute text-white font-medium left-5 bottom-4 rounded-full px-1 bg-green-500
+    @apply w-6 h-6 flex items-center justify-center absolute text-white font-medium left-5 bottom-4 rounded-full px-1 bg-green-500
 }
 .login-icon{
     @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
@@ -48,7 +47,7 @@
     @apply translate-x-0
 }
 .Desksidenav{
-    @apply md:fixed md:pt-16 md:border md:px-3 hidden md:block md:w-1/6 md:h-full
+    @apply md:fixed md:pt-16 md:border md:pl-5 md:pr-3 hidden md:block md:w-1/6 md:h-full
 }
 .Desksidenav p{
     @apply text-sm py-1
@@ -58,7 +57,7 @@
 }
 /* End of header */
 .sectionOne{
-    @apply flex items-center justify-center w-full bg-purple-300 px-5 pb-5 pt-16
+    @apply flex items-center justify-center w-full bg-purple-300 px-5 pb-8 pt-20
 }
 .title{
     @apply font-bold md:text-3xl text-2xl mb-2
@@ -67,7 +66,7 @@
     @apply bg-green-600 py-1 px-2 text-white font-bold rounded my-2
 }
 .topsellers{
-    @apply w-full text-center my-4
+    @apply w-full text-center my-7
 }
 .right{
     @apply absolute right-0 font-bold text-green-600 top-20
@@ -86,7 +85,7 @@
     @apply bg-green-600 rounded-full text-white
 }
 .toppicks{
-    @apply flex overflow-auto snap-x m-3 h-44
+    @apply flex items-center overflow-auto snap-x m-5 h-48
     md:items-center md:justify-between md:h-52
 }
 .product{
@@ -98,7 +97,7 @@
 }
 .details{
     @apply bg-stone-50 w-full h-2/5 mt-1 rounded-md flex flex-col items-center justify-center
-    md:p-2 md:mt-2
+    md:p-4 md:mt-2
 }
 .details p{
     @apply text-xs font-bold
@@ -108,19 +107,25 @@
 }
 
 /* ProductDetails */
+.productdetail{
+    @apply flex flex-col items-center justify-center pt-16 w-2/4 mx-auto
+}
 .detailimg{
-    @apply w-3/5 max-h-fit
+    @apply w-3/5 max-h-fit flex items-center justify-center
 }
 .productinfo p{
     @apply font-bold
 }
 .adddiv{
-    @apply h-11 fixed w-full bottom-0 flex items-center justify-center px-1 mb-3
+    @apply h-11 fixed w-full bg-white bottom-0 flex items-center justify-center px-1 mb-3
 }
 .addbtn{
     @apply bg-green-600 text-white font-bold h-full w-11/12 rounded-md
+    md:w-2/4
 }
-
+.disabled{
+    @apply bg-green-600 bg-opacity-40
+}
 /* Empty Cart */
 .emptycartcont{
     @apply pt-28 text-center
@@ -133,4 +138,10 @@
 }
 .additems button{
     @apply w-4 mx-2 text-lg font-bold
+}
+.footer{
+    @apply bg-zinc-200 px-5 pt-5 pb-1 text-xs flex items-center justify-center flex-wrap
+}
+.footer p{
+    @apply ml-3 mb-3
 }

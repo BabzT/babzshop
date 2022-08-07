@@ -56,12 +56,10 @@ export default createStore({
       item = {...item, quantity: 1}
       if(state.cartItems.length > 0){
         let myItem = state.cartItems.some(i => i.id == item.id)
-        if(myItem){
-          alert('You have the product in your shopping bag')
-        }else{
+        if(!myItem){
           state.cartItems.push(item)
           state.cartItemCount++
-        }   
+        }  
       } else{
         state.cartItems.push(item)
         state.cartItemCount++

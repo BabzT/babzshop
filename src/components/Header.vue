@@ -9,10 +9,10 @@
             <h1 class="logo" @click="goTo('home')">Shop<span class="text-black">per</span></h1>
         </div>
         <div class="flex items-center">
-            <a class="cart" @click="goTo('cart')">
+            <div class="cart" @click="goTo('cart')">
                 <span class="counter">{{cartItemCount}}</span>
                 <span class="material-symbols-outlined text-green-500">shopping_bag</span>
-            </a>
+            </div>
             <a class="login-icon">
                 <span class="material-symbols-outlined text-white">account_circle</span>
             </a>

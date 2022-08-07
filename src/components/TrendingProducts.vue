@@ -1,8 +1,8 @@
 <template>
   <div class="topsellers">
     <h1 class="tabtitle">Trending Products</h1>
-    <button class="electronicsbtn active" @click="activeTab = 'Electronics', electronics()">Electronics</button>
-    <button class="menclothingbtn" @click="activeTab = 'MenClothing', clothing()">Men Clothing</button>
+    <button :class="{active : isActive1}" class="electronicsbtn" @click="activeTab = 'Electronics', electronics()">Electronics</button>
+    <button :class="{active : isActive2}" class="menclothingbtn" @click="activeTab = 'MenClothing', clothing()">Men Clothing</button>
 
     <component :is="activeTab"/>
   </div>
@@ -20,16 +20,18 @@ export default {
     data(){
         return{
             activeTab: 'Electronics',
+            isActive1: true,
+            isActive2: false
         }
     },
     methods:{
         electronics(){
-            document.querySelector('.electronicsbtn').classList.add('active')
-            document.querySelector('.menclothingbtn').classList.remove('active')
+            this.isActive1 = true
+            this.isActive2 = false
         },
         clothing(){
-            document.querySelector('.menclothingbtn').classList.add('active')
-            document.querySelector('.electronicsbtn').classList.remove('active')
+            this.isActive1 = false
+            this.isActive2 = true
         }
     }
 }
