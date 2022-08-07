@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <div class="pt-16 px-2 md:w-2/4 md:mx-auto">
+  <div class="pt-16 h-screen px-2 md:w-2/4 md:mx-auto">
     <div v-if="totalPrice !== 0" class="cartitems">
       <h1 class="text-2xl font-bold mb-2">Your Cart</h1>
 
@@ -26,18 +26,21 @@
     </div>
     <EmptyCart v-else/>
   </div>
+  <Footer/>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
 import EmptyCart from '@/components/EmptyCart.vue'
+import Footer from '@/components/Footer.vue'
 import {mapState, mapActions} from "vuex"
 import  swal from 'sweetalert'
 export default {
     name:'CartView',
     components:{
         Header,
-        EmptyCart
+        EmptyCart,
+        Footer
     },
     data(){
       return{

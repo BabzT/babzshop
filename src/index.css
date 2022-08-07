@@ -108,7 +108,7 @@
 
 /* ProductDetails */
 .productdetail{
-    @apply flex flex-col items-center justify-center pt-16 w-2/4 mx-auto
+    @apply relative flex flex-col items-center justify-center pt-16 md:w-2/4 md:mx-auto
 }
 .detailimg{
     @apply w-3/5 max-h-fit flex items-center justify-center
