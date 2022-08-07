@@ -1,5 +1,5 @@
 <template>
-  <div class="font-nunito">
+  <div class="font-nunito min-h-screen">
     <router-view/>
   </div>
 </template>
