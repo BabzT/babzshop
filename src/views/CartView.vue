@@ -1,17 +1,17 @@
 <template>
   <Header/>
-  <div class="pt-16 min-h-screen px-2 md:w-2/4 md:mx-auto">
+  <div class="pt-16 min-h-screen px-5 md:w-2/5 md:mx-auto">
     <div v-if="totalPrice !== 0" class="cartitems">
       <h1 class="text-2xl font-bold mb-2">Your Cart</h1>
 
-      <div  v-for="items in cartItems" :key="items.id" class="flex items-center my-2 justify-between">
-        <img class="h-16 w-14 md:h-20 md:w-20" :src="items.image" alt="">
+      <div  v-for="items in cartItems" :key="items.id" class="flex items-center mb-3 justify-between my-2 flex-wrap">
+        <img class="h-16 w-14 mt-4 md:h-20 md:w-20" :src="items.image" alt="">
 
-        <div class="text-xs w-7/12 font-bold text-left">
+        <div class="text-xs w-9/12 font-bold text-left">
           <p>{{items.title}}</p>
-          <div class="flex items-center justify-between pr-4">
-            <p class="text-amber-500 text-sm">${{items.price}}</p>
-          <button @click="deleteItem(items)"><span class="material-symbols-outlined text-lg text-red-600">delete</span></button>
+          <div class="flex items-center justify-between">
+            <p class="text-amber-500 text-sm mt-2">${{items.price}}</p>
+            <button @click="deleteItem(items)"><span class="material-symbols-outlined text-lg text-red-600">delete</span></button>
           </div>
         </div>
         <div class="additems">
@@ -20,9 +20,9 @@
           <button @click="addItem(items)">+</button>
         </div>
       </div>
-      <p class="font-bold text-lg my-2">Your Total: <span>${{totalPrice.toFixed(2)}}</span></p>
-      <button @click="checkOut" class="bg-green-600 text-white mr-3 font-bold p-2 rounded-md">CHECKOUT</button>
-      <button @click="clearCart" class="bg-purple-500 text-white font-bold p-2 rounded-md">CLEAR CART</button>
+      <p class="font-bold text-lg mt-6">Your Total: <span>${{totalPrice.toFixed(2)}}</span></p>
+      <button @click="checkOut" class="bg-green-600 text-white mr-3 mt-4 font-bold p-2 rounded-md">CHECKOUT</button>
+      <button @click="clearCart" class="bg-purple-500 text-white mt-4 font-bold p-2 rounded-md">CLEAR CART</button>
     </div>
     <EmptyCart v-else/>
   </div>
@@ -70,17 +70,13 @@ export default {
 
       },
       checkOut(){
+        this.clearCart()
         swal("Good Job!", "Your order is placed successfully!", "success").then(
           value => {
             window.location.href = "/cart";
-            this.clearCart()
           }
         )
       },
     }
 }
 </script>
-
-<style>
-
-</style>

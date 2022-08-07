@@ -108,10 +108,11 @@
 
 /* ProductDetails */
 .productdetail{
-    @apply relative flex flex-col items-center justify-center pt-16 md:w-2/4 md:mx-auto
+    @apply flex flex-col items-center justify-center pt-16 md:w-2/4 md:mx-auto
 }
 .detailimg{
-    @apply w-3/5 max-h-fit flex items-center justify-center
+    @apply w-3/5 h-fit flex items-center justify-center
+    md:w-2/5
 }
 .productinfo p{
     @apply font-bold
@@ -134,10 +135,10 @@
     @apply text-center
 }
 .additems{
-    @apply h-fit border-2 rounded-lg
+    @apply h-fit border-2 rounded-lg mt-1 w-2/4 flex items-center justify-between mx-auto
 }
 .additems button{
-    @apply w-4 mx-2 text-lg font-bold
+    @apply w-4 mx-1 text-lg font-bold
 }
 .footer{
     @apply bg-zinc-200 px-5 pt-5 pb-1 text-xs flex items-center justify-center flex-wrap
