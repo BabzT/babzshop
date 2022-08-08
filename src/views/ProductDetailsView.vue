@@ -10,10 +10,11 @@
             <p>Price: <span class="text-sm text-rose-600">${{product.price}}</span></p>
             <p>Description: <span class="text-xs capitalize">{{product.description}}</span></p>
         </div>
+        <div class="adddiv">
+            <button :class="{disabled : isDisabled}" :disabled="isDisabled" @click="addToCart" class="addbtn">Add Item</button>
+        </div>
     </div>
-    <div class="adddiv">
-        <button :class="{disabled : isDisabled}" :disabled="isDisabled" @click="addToCart" class="addbtn">Add Item</button>
-    </div>
+    
  
 </template>
 

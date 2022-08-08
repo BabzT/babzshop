@@ -13,9 +13,19 @@
                 <span class="counter">{{cartItemCount}}</span>
                 <span class="material-symbols-outlined text-green-500">shopping_bag</span>
             </div>
-            <a class="login-icon">
-                <span class="material-symbols-outlined text-white">account_circle</span>
-            </a>
+            <div class="relative">
+                <div @click="userToggle" class="login-icon">
+                    <span class="material-symbols-outlined text-white">account_circle</span>
+                </div>
+                <transition name="options-anim">
+                    <div v-show="user" class="options">
+                        <a href="#">Log In</a>
+                        <a href="#">Sign Up</a>
+                        <hr>
+                        <a href="#" class="text-rose-500">LogOut</a>
+                    </div>
+                </transition>
+            </div>
         </div>
     </div>
 </header>
@@ -46,6 +56,7 @@ export default {
  data(){
     return{
         sideNav: null,
+        user:false
     }
  },
  computed:{
@@ -57,6 +68,9 @@ export default {
     },
     goTo(page){
         page === "home" ? this.$router.push({name:'home'}) : this.$router.push({name:'cart'})
+    },
+    userToggle(){
+        this.user = !this.user
     }
  }
 }

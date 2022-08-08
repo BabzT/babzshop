@@ -26,6 +26,23 @@
 .login-icon{
     @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
 }
+.options{
+    @apply flex flex-col w-20 absolute font-bold m-1 pb-2 right-0 mt-1 bg-gray-100 rounded-md
+}
+.options a{
+    @apply ml-3 mt-1
+}
+.options-anim-enter-active,
+.options-anim-leave-active{
+    @apply transition duration-500 ease-in-out
+}
+.options-anim-enter-from,
+.options-anim-leave-to{
+    @apply opacity-0
+}
+.options-anim-enter-to{
+    @apply opacity-100
+}
 .sidenav{
     @apply fixed w-3/4 h-full bg-indigo-50 p-3 left-0 z-40 top-12
 }
@@ -66,7 +83,7 @@
     @apply bg-green-600 py-1 px-2 text-white font-bold rounded my-2
 }
 .topsellers{
-    @apply w-full text-center my-7
+    @apply w-full text-center my-7 h-72
 }
 .right{
     @apply absolute right-0 font-bold text-green-600 top-20
@@ -108,7 +125,7 @@
 
 /* ProductDetails */
 .productdetail{
-    @apply flex flex-col items-center justify-center pt-16 md:w-2/4 md:mx-auto
+    @apply relative flex flex-col items-center justify-center pt-16 md:w-2/4 md:mx-auto
 }
 .detailimg{
     @apply w-3/5 h-fit flex items-center justify-center
