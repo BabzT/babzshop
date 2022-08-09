@@ -84,6 +84,7 @@
 }
 .topsellers{
     @apply w-full text-center my-7 h-72
+    md:my-14
 }
 .right{
     @apply absolute right-0 font-bold text-green-600 top-20
@@ -104,6 +105,10 @@
 .toppicks{
     @apply flex items-center overflow-auto snap-x m-5 h-48
     md:items-center md:justify-between md:h-52
+}
+.preloader{
+    @apply flex items-center overflow-auto snap-x m-5 h-48 bg-gray-100 justify-center font-bold
+    md:h-52
 }
 .product{
     @apply flex flex-col items-center justify-evenly w-min h-44 mr-4 px-1 flex-shrink-0 snap-start
@@ -162,4 +167,16 @@
 }
 .footer p{
     @apply ml-3 mb-3
+}
+.signupdiv{
+    @apply flex flex-col min-h-screen items-center justify-center bg-gray-100
+}
+.input{
+    @apply w-10/12 my-4 h-10 rounded-lg outline-0 border-green-600
+}
+.submitbtn{
+    @apply bg-green-600 px-2 py-1 rounded font-bold text-white
+}
+.link{
+    @apply text-xs font-medium my-4
 }

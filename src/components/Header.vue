@@ -19,8 +19,8 @@
                 </div>
                 <transition name="options-anim">
                     <div v-show="user" class="options">
-                        <a href="#">Log In</a>
-                        <a href="#">Sign Up</a>
+                        <router-link :to="{name:'login'}">Login</router-link>
+                        <router-link :to="{name:'signup'}">Sign Up</router-link>
                         <hr>
                         <a href="#" class="text-rose-500">LogOut</a>
                     </div>

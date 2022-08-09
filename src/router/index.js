@@ -20,6 +20,16 @@ const routes = [
     name: 'cart',
     component: () => import(/* webpackChunkName: "cart" */ '../views/CartView.vue')
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "cart" */ '../views/Login.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import(/* webpackChunkName: "cart" */ '../views/SignUp.vue')
+  },
 ]
 
 const router = createRouter({
