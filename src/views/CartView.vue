@@ -21,8 +21,8 @@
         </div>
       </div>
       <p class="font-bold text-lg mt-6">Your Total: <span>${{totalPrice.toFixed(2)}}</span></p>
-      <button @click="checkOut" class="bg-green-600 text-white mr-3 mt-4 font-bold p-2 rounded-md">CHECKOUT</button>
-      <button @click="clearCart" class="bg-purple-500 text-white mt-4 font-bold p-2 rounded-md">CLEAR CART</button>
+      <button @click="checkOut" class="bg-green-600 text-white mr-3 mt-4 mb-6 font-bold p-2 rounded-md">CHECKOUT</button>
+      <button @click="clearCart" class="bg-purple-500 text-white mt-4 mb-6 font-bold p-2 rounded-md">CLEAR CART</button>
     </div>
     <EmptyCart v-else/>
   </div>

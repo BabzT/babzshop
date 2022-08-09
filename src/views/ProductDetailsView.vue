@@ -54,7 +54,7 @@ export default {
         this.$store.dispatch('addToCart',this.product);
         this.isDisabled = true;
         this.toast = true
-        setTimeout(this.clearToast,3000)
+        setTimeout(this.clearToast, 4000)
        },
        clearToast(){
         this.toast = false
