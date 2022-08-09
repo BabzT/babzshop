@@ -4,7 +4,7 @@
     
     <form @submit.prevent="signUp" class="w-11/12 md:w-5/12 flex flex-col items-center justify-center">
         <input class="input" 
-        @keypress.space.prevent 
+        @keydown.space.prevent 
         v-model="name" 
         type="text" 
         placeholder="Enter Your Name" 
@@ -12,7 +12,7 @@
         required>
 
         <input class="input" 
-        @keypress.space.prevent 
+        @keydown.space.prevent 
         v-model="email" 
         type="text" 
         placeholder="Enter Your Email"  
@@ -20,7 +20,7 @@
         required>
 
         <input class="input" 
-        @keypress.space.prevent 
+        @keydown.space.prevent 
         v-model="password" 
         type="text" 
         minlength="6" 
