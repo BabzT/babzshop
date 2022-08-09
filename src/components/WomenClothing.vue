@@ -2,9 +2,7 @@
   <div class="relative">
     <span class="material-symbols-outlined right">chevron_right</span>
 
-    <div v-show="allWomenClothing.length < 3" class="toppicks bg-gray-200 flex items-center justify-center font-bold">
-      <p>LOADING PRODUCTS...</p>
-    </div>
+    <Preloader v-show="allWomenClothing.length < 3"/>
 
     <div class="toppicks">
       <div v-for="product in allWomenClothing" :key="product.id" class="product">
@@ -22,9 +20,13 @@
 </template>
 
 <script>
+import Preloader from '@/components/Preloader.vue'
 import {mapGetters, mapActions} from 'vuex'
 export default {
   name:'WomenClothing',
+  components:{
+    Preloader
+  },
   computed:{
     ...mapGetters(["allWomenClothing"])
   },
