@@ -2,7 +2,7 @@
   <div>
     <Header/>
 
-    <div class="md:flex">
+    <div class="md:flex min-h-screen">
       <SideNav/>
       <div class="md:w-10/12 md:ml-auto">
         <div class="sectionOne">
