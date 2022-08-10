@@ -5,8 +5,8 @@
     </transition>
     <h1 class="font-bold text-3xl mb-2"><span class="text-green-600">SIGN</span> UP</h1>
     
-    <form @submit.prevent="signUp" class="w-11/12 md:w-5/12 flex flex-col items-center justify-center">
-        <label for="name" class="labels">Enter your Full Name</label>
+    <form @submit.prevent="signUp" class="w-10/12 md:w-2/5 flex flex-col items-center justify-center">
+        <label for="name" class="labels">Full Name</label>
         <input class="input"
         v-model.trim="name" 
         type="text" 
@@ -15,7 +15,7 @@
         minlength="4"
         required>
 
-        <label for="username" class="labels">Enter your Username</label>
+        <label for="username" class="labels">Username</label>
         <input class="input" 
         v-model.trim="username" 
         id="username"
@@ -24,7 +24,7 @@
         maxlength="10"
         required>
 
-        <label for="email" class="labels">Enter your Email</label>
+        <label for="email" class="labels">Email</label>
         <input class="input" 
         v-model.trim="email" 
         id="email"
@@ -33,7 +33,7 @@
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
         required>
 
-        <label for="password" class="labels">Enter your Password</label>
+        <label for="password" class="labels">Password</label>
         <input class="input"
         :class="{invalid : isInvalid}"
         v-model.trim="password" 

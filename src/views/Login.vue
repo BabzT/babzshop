@@ -5,8 +5,8 @@
     </transition>
     <h1 class="font-bold text-green-600 text-3xl mb-5"><span class="text-black">LOG</span> IN</h1>
     
-    <form @submit.prevent="login" class="w-11/12 md:w-5/12 flex flex-col items-center justify-center">
-        <label for="email" class="labels">Enter your Email</label>
+    <form @submit.prevent="login" class="w-10/12 md:w-2/5 flex flex-col items-center justify-center">
+        <label for="email" class="labels">Email</label>
         <input class="input"
         v-model.trim="email" 
         id="email"
@@ -15,7 +15,7 @@
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
         required>
 
-        <label for="password" class="labels">Enter your Password</label>
+        <label for="password" class="labels">Password</label>
         <input class="input"
         v-model.trim="password" 
         id="password"

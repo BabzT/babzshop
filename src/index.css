@@ -169,11 +169,10 @@
     @apply flex flex-col h-screen items-center justify-center bg-gray-100
 }
 .labels{
-    @apply self-start ml-8 mt-5 text-sm font-medium
-    md:ml-12
+    @apply self-start mt-5 text-sm font-medium
 }
 .input{
-    @apply w-10/12 h-12 rounded-lg outline-0  border-green-600 
+    @apply w-full h-12 rounded-lg outline-0  border-green-600 
 }
 .invalid{
     @apply border-red-600 border-2
