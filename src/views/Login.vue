@@ -3,7 +3,7 @@
     <transition name="errorMsg" mode="out-in">
         <p v-if="showError" class="errorMsg">Please provide a Valid Email or Password!</p>
     </transition>
-    <h1 class="font-bold text-3xl mb-5"><span class="text-green-600">LOG</span> IN</h1>
+    <h1 class="font-bold text-green-600 text-3xl mb-5"><span class="text-black">LOG</span> IN</h1>
     
     <form @submit.prevent="login" class="w-11/12 md:w-5/12 flex flex-col items-center justify-center">
         <input class="input"
