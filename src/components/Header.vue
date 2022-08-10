@@ -14,15 +14,19 @@
                 <span class="material-symbols-outlined text-green-500">shopping_bag</span>
             </div>
             <div class="relative">
-                <div @click="userToggle" class="login-icon">
+                <div @click="profileToggle" class="login-icon">
                     <span class="material-symbols-outlined text-white">account_circle</span>
                 </div>
                 <transition name="options-anim">
-                    <div v-show="user" class="options">
-                        <router-link :to="{name:'login'}">Login</router-link>
-                        <router-link :to="{name:'signup'}">Sign Up</router-link>
+                    <div v-show="profile" class="options">
+                        <router-link class="mt-1" v-if="signin" :to="{name:'login'}">Login</router-link>
                         <hr>
-                        <a href="#" class="text-rose-500">LogOut</a>
+                        <router-link class="mt-1" v-if="signin" :to="{name:'signup'}">SignUp</router-link>
+                        <div v-show="logout">
+                            <p class="capitalize text-base mt-2 mb-3 text-green-600">{{username}}</p>
+                            <hr>
+                            <a @click="logOut" class="text-rose-500">LogOut</a>
+                        </div>
                     </div>
                 </transition>
             </div>
@@ -55,8 +59,20 @@ export default {
  name: 'Header',
  data(){
     return{
+        username:'',
         sideNav: null,
-        user:false
+        profile:false,
+        logout: false,
+        signin:true
+    }
+ },
+ mounted(){
+    const user = JSON.parse(localStorage.getItem('user'));
+    const userinfo = JSON.parse(sessionStorage.getItem('userinfo'))
+    if(userinfo){
+        this.username = user.username
+        this.logout = true;
+        this.signin = false
     }
  },
  computed:{
@@ -69,8 +85,12 @@ export default {
     goTo(page){
         page === "home" ? this.$router.push({name:'home'}) : this.$router.push({name:'cart'})
     },
-    userToggle(){
-        this.user = !this.user
+    profileToggle(){
+        this.profile = !this.profile
+    },
+    logOut(){
+        sessionStorage.clear();
+        window.location.href = "/"
     }
  }
 }

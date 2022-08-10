@@ -70,12 +70,17 @@ export default {
 
       },
       checkOut(){
-        this.clearCart()
-        swal("Good Job!", "Your order is placed successfully!", "success").then(
+        const userinfo = sessionStorage.getItem('userinfo');
+        if(!userinfo){
+          this.$router.push({name:'login'})
+        }
+        else{
+          this.clearCart()
+          swal("Good Job!", "Your order is placed successfully!", "success").then(
           value => {
             window.location.href = "/cart";
-          }
-        )
+          })
+        }
       },
     }
 }

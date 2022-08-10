@@ -21,16 +21,13 @@
     @apply relative flex items-center border-2 border-green-500 h-fit p-1 rounded-full mr-3
 }
 .counter{
-    @apply w-6 h-6 flex items-center justify-center absolute text-white font-medium left-5 bottom-4 rounded-full px-1 bg-green-500
+    @apply w-fit flex items-center justify-center absolute text-white font-medium left-5 bottom-4 rounded-full px-1 bg-green-500
 }
 .login-icon{
     @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
 }
 .options{
-    @apply flex flex-col w-24 absolute font-bold my-1 pb-2 right-0 mt-1 bg-gray-100 rounded-md
-}
-.options a{
-    @apply ml-4 mt-1
+    @apply flex flex-col items-start justify-center px-4 w-fit absolute font-bold my-1 pb-2 right-0 mt-1 bg-gray-100 rounded-md
 }
 .options-anim-enter-active,
 .options-anim-leave-active{
@@ -175,8 +172,22 @@
     @apply w-10/12 my-4 h-10 rounded-lg outline-0  border-green-600
 }
 .submitbtn{
-    @apply bg-green-600 px-2 py-1 rounded font-bold text-white
+    @apply bg-green-600 px-3 shadow py-1 rounded font-bold text-white text-lg
 }
 .link{
-    @apply text-xs font-medium my-4
+    @apply text-sm font-medium my-4
+}
+.errorMsg{
+    @apply italic font-medium text-red-500 w-fit mx-auto absolute top-10 border-2 p-2 rounded-lg shadow bg-gray-50
+}
+.errorMsg-enter-active,
+.errorMsg-leave-active{
+    @apply transition duration-1000 ease-in-out
+}
+.errorMsg-enter-from,
+.errorMsg-leave-to{
+    @apply opacity-0
+}
+.errorMsg-enter-to{
+    @apply opacity-100
 }
