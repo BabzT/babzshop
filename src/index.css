@@ -168,20 +168,27 @@
 .signupdiv{
     @apply flex flex-col h-screen items-center justify-center bg-gray-100
 }
+.labels{
+    @apply self-start ml-8 mt-5 text-sm font-medium
+    md:ml-12
+}
 .input{
-    @apply w-10/12 my-4 h-12 rounded-lg outline-0  border-green-600 
+    @apply w-10/12 h-12 rounded-lg outline-0  border-green-600 
+}
+.invalid{
+    @apply border-red-600 border-2
 }
 .input::placeholder{
     @apply text-gray-300
 }
 .submitbtn{
-    @apply bg-green-600 px-4 shadow py-1 rounded font-bold text-white text-lg
+    @apply bg-green-600 px-4 shadow mt-4 py-1 rounded font-bold text-white text-lg
 }
 .link{
     @apply text-base font-medium my-4
 }
 .errorMsg{
-    @apply italic font-medium text-red-500 w-fit mx-auto absolute top-10 border-2 p-2 rounded-lg shadow bg-gray-50
+    @apply italic font-medium text-red-500 w-fit mx-auto absolute top-9 border-2 p-2 rounded-lg shadow bg-gray-50
 }
 .errorMsg-enter-active,
 .errorMsg-leave-active{
