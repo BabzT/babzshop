@@ -1,6 +1,5 @@
 <template>
   <div class="relative">
-    <span class="material-symbols-outlined right">chevron_right</span>
 
     <Preloader v-show="allMenClothing.length < 3"/>
 

@@ -4,6 +4,7 @@
     <button :class="{active : isActive1}" class="electronicsbtn" @click="activeTab = 'Electronics', electronics()">Electronics</button>
     <button :class="{active : isActive2}" class="menclothingbtn" @click="activeTab = 'MenClothing', clothing()">Men Clothing</button>
 
+    <span class="material-symbols-outlined right">chevron_right</span>
     <component :is="activeTab"/>
   </div>
 </template>

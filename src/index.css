@@ -80,11 +80,11 @@
     @apply bg-green-600 py-1 px-2 text-white font-bold rounded my-2
 }
 .topsellers{
-    @apply w-full text-center my-7 h-72
+    @apply w-full text-center my-7 h-72 relative
     md:my-14
 }
 .right{
-    @apply absolute right-0 font-bold text-green-600 top-20
+    @apply absolute right-0 font-bold text-green-600 top-2/3
     md:hidden
 }
 .tabtitle{
