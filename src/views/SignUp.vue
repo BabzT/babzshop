@@ -9,21 +9,21 @@
         <input class="input"
         v-model.trim="name" 
         type="text" 
-        placeholder="Enter Your Name" 
+        placeholder="Akinwobi Babatunde" 
         minlength="4"
         required>
 
         <input class="input" 
         v-model.trim="username" 
         type="text" 
-        placeholder="Enter Your Username" 
+        placeholder="Babz" 
         maxlength="10"
         required>
 
         <input class="input" 
         v-model.trim="email" 
         type="text" 
-        placeholder="Enter Your Email"  
+        placeholder="example@gmail.com"  
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
         required>
 

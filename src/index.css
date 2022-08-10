@@ -172,10 +172,10 @@
     @apply w-10/12 my-4 h-12 rounded-lg outline-0  border-green-600
 }
 .submitbtn{
-    @apply bg-green-600 px-3 shadow py-1 rounded font-bold text-white text-lg
+    @apply bg-green-600 px-4 shadow py-1 rounded font-bold text-white text-lg
 }
 .link{
-    @apply text-sm font-medium my-4
+    @apply text-base font-medium my-4
 }
 .errorMsg{
     @apply italic font-medium text-red-500 w-fit mx-auto absolute top-10 border-2 p-2 rounded-lg shadow bg-gray-50
