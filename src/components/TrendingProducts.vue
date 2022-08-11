@@ -4,7 +4,8 @@
     <button :class="{active : isActive1}" class="electronicsbtn" @click="activeTab = 'Electronics', electronics()">Electronics</button>
     <button :class="{active : isActive2}" class="menclothingbtn" @click="activeTab = 'MenClothing', clothing()">Men Clothing</button>
 
-    <span class="material-symbols-outlined right">chevron_right</span>
+    <span @click="scrollRight2" class="material-symbols-rounded right">arrow_forward</span>
+    <span @click="scrollLeft2" class="material-symbols-rounded left">arrow_back</span>
     <component :is="activeTab"/>
   </div>
 </template>
@@ -12,8 +13,10 @@
 <script>
 import Electronics from '@/components/Electronics.vue'
 import MenClothing from '@/components/MenClothing.vue'
+import scrollMixin2 from '@/mixins/scroll'
 export default {
     name: 'TrendingProducts',
+    mixins: [scrollMixin2],
     components:{
         Electronics,
         MenClothing

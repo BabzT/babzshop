@@ -27,7 +27,7 @@
     @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
 }
 .options{
-    @apply flex flex-col items-start justify-center px-4 w-fit absolute font-bold my-1 pb-2 right-0 mt-1 bg-gray-100 rounded-md
+    @apply flex flex-col items-start justify-center px-6 w-fit absolute font-bold my-1 pb-3 right-0 mt-1 bg-gray-100 rounded-md
 }
 .options-anim-enter-active,
 .options-anim-leave-active{
@@ -84,7 +84,11 @@
     md:my-14
 }
 .right{
-    @apply absolute right-0 font-bold text-green-600 top-2/3
+    @apply absolute right-2 text-xl font-bold text-green-600 top-2/3
+    md:hidden
+}
+.left{
+    @apply absolute left-2 text-xl font-bold text-green-600 top-2/3
     md:hidden
 }
 .tabtitle{
@@ -99,7 +103,8 @@
 .active{
     @apply bg-green-600 rounded-full text-white
 }
-.toppicks{
+.toppicks,
+.electronics{
     @apply flex items-center overflow-auto snap-x m-5 h-48
     md:items-center md:justify-between md:h-52
 }
@@ -169,10 +174,16 @@
     @apply flex flex-col h-screen items-center justify-center bg-gray-100
 }
 .labels{
-    @apply self-start mt-5 text-sm font-medium
+    @apply self-start  mt-5 text-sm font-medium
 }
 .input{
     @apply w-full h-12 rounded-lg outline-0  border-green-600 
+}
+.passworddiv{
+    @apply w-full mt-5 relative
+}
+.visibility{
+    @apply absolute right-2 top-1/2 text-green-600 font-bold
 }
 .invalid{
     @apply border-red-600 border-2

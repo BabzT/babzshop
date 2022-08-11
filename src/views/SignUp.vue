@@ -33,15 +33,20 @@
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
         required>
 
-        <label for="password" class="labels">Password</label>
-        <input class="input"
-        :class="{invalid : isInvalid}"
-        v-model.trim="password" 
-        id="password"
-        type="text" 
-        minlength="6" 
-        placeholder="Enter Password" 
-        required>
+        <div class="passworddiv">
+            <label for="password" class="labels">Password</label>
+            <input class="input"
+            :class="{invalid : isInvalid}"
+            v-model.trim="password" 
+            id="password"
+            :type="isNotVisible ? 'password' : 'text'" 
+            minlength="6" 
+            placeholder="Enter Password" 
+            required>
+
+            <span v-if="isNotVisible" @click="togglePassword" class="material-symbols-outlined visibility">visibility_off</span>
+            <span v-else @click="togglePassword" class="material-symbols-outlined visibility">visibility</span>
+        </div>
 
         <button v-if="signupbtn" class="submitbtn" type="submit">Sign Up</button>
         <button v-if="loading" disabled type="button" class="py-2.5 px-3 mt-5 mr-2 text-sm font-bold text-green-600 bg-white rounded-lg border border-gray-200 shadow focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 inline-flex items-center">
@@ -70,6 +75,7 @@ export default {
             signupbtn:true,
             loading:false,
             isInvalid:false,
+            isNotVisible:true
         }
     },
     methods:{
@@ -114,6 +120,9 @@ export default {
                 this.isInvalid = true
                 setTimeout(() => this.isInvalid = false, 2000)
             }
+        },
+        togglePassword(){
+            this.isNotVisible = !this.isNotVisible
         }
     }
 }

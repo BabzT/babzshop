@@ -22,6 +22,7 @@
 <script>
 import Preloader from '@/components/Preloader.vue'
 import {mapGetters, mapActions} from "vuex"
+
 export default {
   name: 'TopPicks',
   components:{

@@ -1,9 +1,9 @@
 <template>
-  <div class="relative">
+  <div>
 
     <Preloader v-show="allMenClothing.length < 3"/>
 
-    <div class="toppicks">
+    <div class="electronics">
       <div v-for="product in allMenClothing" :key="product.id" class="product">
         <router-link :to="'/productdetails/' + product.id" class="h-full">
         <img :src="product.image" alt="" class="productimg">

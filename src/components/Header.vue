@@ -3,7 +3,7 @@
     <div class="mobile">
         <div class="flex items-center">
             <div class="flex items-center md:hidden">
-                <span @click="toggleSideNav" v-if="!sideNav" class="material-symbols-outlined text-3xl mr-1">menu</span>
+                <span @click="toggleSideNav" v-if="!sideNav" class="material-symbols-rounded text-3xl mr-1">sort</span>
                 <span @click="toggleSideNav" v-if="sideNav" class="material-symbols-outlined text-3xl mr-1">close</span>
             </div>
             <h1 class="logo" @click="goTo('home')">Shop<span class="text-black">per</span></h1>
@@ -19,9 +19,9 @@
                 </div>
                 <transition name="options-anim">
                     <div v-show="profile" class="options">
-                        <router-link class="mt-1" v-if="signin" :to="{name:'login'}">Login</router-link>
+                        <router-link class="mt-2" v-if="signin" :to="{name:'login'}">Login</router-link>
                         <hr>
-                        <router-link class="mt-1" v-if="signin" :to="{name:'signup'}">SignUp</router-link>
+                        <router-link class="mt-2" v-if="signin" :to="{name:'signup'}">SignUp</router-link>
                         <div v-show="logout">
                             <p class="capitalize text-base mt-2 mb-3 text-green-600">{{username}}</p>
                             <hr>
