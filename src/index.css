@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 *{
-    @apply box-border scroll-smooth
+    @apply box-border scroll-smooth select-none
 }
 /* Header */
 .header{
@@ -15,16 +15,16 @@
     @apply flex items-center justify-between py-2 px-5
 }
 .logo{
-    @apply italic text-green-500 text-xl font-medium
+    @apply italic text-green-500 text-xl font-medium cursor-pointer
 }
 .cart{
-    @apply relative flex items-center border-2 border-green-500 h-fit p-1 rounded-full mr-3
+    @apply relative flex items-center border-2 border-green-500 h-fit p-1 rounded-full mr-3 cursor-pointer
 }
 .counter{
     @apply w-fit flex items-center justify-center absolute text-white font-medium left-5 bottom-4 rounded-full px-1 bg-green-500
 }
 .login-icon{
-    @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500
+    @apply flex items-center border-2 border-green-500 p-1 ml-1 rounded-full bg-green-500 cursor-pointer
 }
 .options{
     @apply flex flex-col items-start justify-center px-6 w-fit absolute font-bold my-1 pb-3 right-0 mt-1 bg-gray-100 rounded-md
@@ -183,7 +183,7 @@
     @apply w-full mt-5 relative
 }
 .visibility{
-    @apply absolute right-2 top-1/2 text-green-600 font-bold
+    @apply absolute right-2 top-1/2 text-green-600
 }
 .invalid{
     @apply border-red-600 border-2
