@@ -61,7 +61,7 @@
     @apply translate-x-0
 }
 .Desksidenav{
-    @apply md:fixed md:pt-16 md:border md:pl-5 md:pr-3 hidden md:block md:w-1/6 md:h-full
+    @apply md:fixed md:pt-2 md:top-12 md:border md:bg-white md:z-40 md:pl-5 md:pr-3 hidden md:block md:w-1/6 md:h-full
 }
 .Desksidenav p{
     @apply text-sm py-1

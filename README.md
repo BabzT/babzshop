@@ -1,19 +1,28 @@
-# myshop
+# My Shop :boom:
 
-## Project setup
-```
-npm install
-```
+This is a fully responsive and functional e-Commerce webApp built with Vuejs.:smiling_face_with_three_hearts:
+The webApp is live [Here](https://babzshop.netlify.app/)
+Star :star: the Repo if you like what you see:blush:.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features :star:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Create Account and Login page.
+- View product details page.
+- Add to cart.
+- Cart items page.
+- Increase,decrease and decrease cart items.
+- Check out.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Technologies and Tools used :hammer_and_wrench:
+- Vue js
+- Vuex
+- Tailwindcss
+- Visual Studio Code
+
+## Screenshots :camera_flash:
+![](src/assets/home.png)
+![](src/assets/cart.png)![](src/assets/checkout.png)
+![](src/assets/signup.png)
+
+## Author:sunglasses:
+##### Akinwobi Babatunde Hezekiah
