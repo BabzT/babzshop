@@ -1,8 +1,10 @@
 # My Shop :boom:
 
 This is a fully responsive and functional e-Commerce webApp built with Vuejs.:smiling_face_with_three_hearts:
-The webApp is live [Here](https://babzshop.netlify.app/)
-Star :star: the Repo if you like what you see:blush:.
+
+The webApp is live [Here](https://babzshop.netlify.app/).
+
+Star :star: the Repo if you like what you see.:blush:
 
 ## Features :star:
 
