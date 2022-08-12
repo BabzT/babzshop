@@ -21,8 +21,9 @@ Star :star: the Repo if you like what you see:blush:.
 
 ## Screenshots :camera_flash:
 ![](src/assets/home.png)
-![](src/assets/cart.jpg)![](src/assets/checkout.jpg)
-![](src/assets/signup.jpg)
+![](src/assets/cart.png)
+![](src/assets/checkout.png)
+
 
 ## Author:sunglasses:
 ##### Akinwobi Babatunde Hezekiah
