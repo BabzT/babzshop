@@ -51,7 +51,7 @@
 }
 .side-nav-enter-active,
 .side-nav-leave-active{
-    @apply transition duration-1000 ease-in-out
+    @apply transition duration-700 ease-in-out
 }
 .side-nav-enter-from,
 .side-nav-leave-to{
